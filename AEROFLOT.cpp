@@ -2,9 +2,9 @@
 
 AEROFLOT::AEROFLOT() : num(0) {}
 AEROFLOT::AEROFLOT(String& n, size_t nm, String &t) :
-	name(n), num(nm), type(t) {}
+		name(n), num(nm), type(t) {}
 AEROFLOT::AEROFLOT(AEROFLOT &AER) :
-	name(AER.name), num(AER.num), type(AER.type) {}
+		name(AER.name), num(AER.num), type(AER.type) {}
 
 
 AEROFLOT& AEROFLOT::operator=(const AEROFLOT& AER) {
@@ -47,25 +47,25 @@ const String& AEROFLOT::GetType() const  {
 void AEROFLOT::print() {
 	int width = 20;
 	std::cout.width(width);
-	std::cout << "Ïóíêò íàçíà÷åíèÿ: ";
+	std::cout << "ÐŸÑƒÐ½ÐºÑ‚ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: ";
 	std::cout << name;
 	std::cout << std::endl;
 
 	std::cout.width(width);
-	std::cout << "Íîìåð ðåéñà: ";
+	std::cout << "ÐÐ¾Ð¼ÐµÑ€ Ñ€ÐµÐ¹ÑÐ°: ";
 	std::cout << num;
 	std::cout << std::endl;
 }
 
 std::istream& operator>>(std::istream &is, AEROFLOT &AER) {
-	std::cout << "Ââåäèòå íàçâàíèå ïóíêòà íàçíà÷åíèÿ: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¿ÑƒÐ½ÐºÑ‚Ð° Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: ";
 	is >> AER.name;
 
-	std::cout << "Ââåäèòå íîìåð ðåéñà: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ñ€ÐµÐ¹ÑÐ°: ";
 	is >> AER.num;
 	is.get();
 
-	std::cout << "Ââåäèòå òèï ñàìîë¸òà: ";
+	std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‚Ð¸Ð¿ ÑÐ°Ð¼Ð¾Ð»Ñ‘Ñ‚Ð°: ";
 	is >> AER.type;
 
 	return is;
@@ -73,17 +73,17 @@ std::istream& operator>>(std::istream &is, AEROFLOT &AER) {
 std::ostream& operator<<(std::ostream &os, const AEROFLOT &AER) {
 	int width = 20;
 	os.width(width);
-	os << "Ïóíêò íàçíà÷åíèÿ: ";
+	os << "ÐŸÑƒÐ½ÐºÑ‚ Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ñ: ";
 	os << AER.name;
 	os << std::endl;
 
 	os.width(width);
-	os << "Íîìåð ðåéñà: ";
+	os << "ÐÐ¾Ð¼ÐµÑ€ Ñ€ÐµÐ¹ÑÐ°: ";
 	os << AER.num;
 	os << std::endl;
 
 	os.width(width);
-	os << "Òèï ñàìîë¸òà: ";
+	os << "Ð¢Ð¸Ð¿ ÑÐ°Ð¼Ð¾Ð»Ñ‘Ñ‚Ð°: ";
 	os << AER.type;
 	os << std::endl;
 

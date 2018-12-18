@@ -1,5 +1,4 @@
 #include "Keeper.h"
-#include "string.h"
 
 Keeper::Keeper() : size(0) {
 	mas = new AEROFLOT[Keeper::COUNT];
@@ -11,7 +10,7 @@ Keeper::~Keeper() {
 void Keeper::operator+=(const AEROFLOT &AER) {
 	int i, j;
 	if (size == Keeper::COUNT)
-		throw exceptions("������ AEROFLOT �����. ��������� ����� ������ ������.");
+		throw exceptions("Список AEROFLOT полон. Добаваить новую запись нельзя.");
 	for (i = 0; i < size; ++i) {
 		if (AER.GetName() < mas[i].GetName())
 			break;
@@ -26,7 +25,7 @@ void Keeper::operator+=(const AEROFLOT &AER) {
 void Keeper::remove(int dec) {
 	int i;
 	if (dec < 0 || dec >= size)
-		throw exceptions("������ �������� �����.");
+		throw exceptions("Введен неверный номер.");
 	for (i = dec; i < size; ++i)
 		move(mas[i], mas[i + 1]);
 	--size;
@@ -44,12 +43,12 @@ void Keeper::print(const String &s) {
 		};
 	}
 	if (flag)
-		throw exceptions("��� �������� ������ ����.");
+		throw exceptions("Нет самолётов данного типа.");
 }
 
 std::ostream& operator<<(std::ostream& os, const Keeper &kpr) {
 	if (!kpr.size)
-		os << "������ ������� ����." << std::endl;
+		os << "Список записей пуст." << std::endl;
 	for (int i = 0; i < kpr.size; ++i) {
 		os << '(' << i + 1 << ')' << std::endl;
 		os << kpr.mas[i];
@@ -61,12 +60,12 @@ std::ostream& operator<<(std::ostream& os, const Keeper &kpr) {
 std::istream& operator>>(std::istream& is, Keeper &kpr) {
 	AEROFLOT AER;
 	int N;
-	std::cout << "������� �������� �������? ";
+	std::cout << "Сколько добавить записей? ";
 	is >> N;
 	is.get();
 	std::cout << std::endl;
 	if (N > Keeper::COUNT || N <= 0)
-		throw exceptions("��������� �������� �����.");
+		throw exceptions("Введенное неверное число.");
 	for (int i = 0; i < N; ++i) {
 		std::cout << '(' << i + 1 << ')' << std::endl;
 		is >> AER;
