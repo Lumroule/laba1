@@ -9,7 +9,6 @@ int main() {
     Keeper kpr;
     int ch;
     bool flag = true;
-    setlocale(LC_ALL, "Russian");
 
     while (flag) {
 

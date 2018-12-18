@@ -10,7 +10,7 @@ Keeper::~Keeper() {
 void Keeper::operator+=(const AEROFLOT &AER) {
 	int i, j;
 	if (size == Keeper::COUNT)
-		throw exceptions("Список AEROFLOT полон. Добаваить новую запись нельзя.");
+		throw exceptions("Список AEROFLOT полон. Добавить новую запись нельзя.");
 	for (i = 0; i < size; ++i) {
 		if (AER.GetName() < mas[i].GetName())
 			break;
