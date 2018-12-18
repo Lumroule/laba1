@@ -9,16 +9,17 @@ int main() {
     Keeper kpr;
     int ch;
     bool flag = true;
+    setlocale(LC_ALL, "Russian");
 
     while (flag) {
 
-        cout << "1. ????????" << endl;
-        cout << "2. ???????" << endl;
-        cout << "3. ??????? ?? ?????" << endl;
-        cout << "4. ??????? ?? ????? ?? ??????? ????" << endl;
-        cout << "5. ?????" << endl;
+        cout << "1. Добавить" << endl;
+        cout << "2. Удалить" << endl;
+        cout << "3. Вывести на экран" << endl;
+        cout << "4. Вывести на экран по нужному типу" << endl;
+        cout << "5. Выход" << endl;
 
-        cout << "???????? ?????: ";
+        cout << "Выберете пункт: ";
         cin >> ch;
         cin.get();
         cout << endl;
@@ -35,7 +36,7 @@ int main() {
             case 2:
                 cout << kpr;
                 if (kpr.GetSize()) {
-                    cout << "???????? ????????? ??????: ";
+                    cout << "Выберите удаляемую запись: ";
                     cin >> ch;
                     cin.get();
                     try {
@@ -50,7 +51,7 @@ int main() {
                 cout << kpr;
                 break;
             case 4:
-                cout << "???????? ???: ";
+                cout << "Выберете тип: ";
                 cin >> str;
                 cout << endl;
                 try {
@@ -64,7 +65,7 @@ int main() {
                 flag = false;
                 break;
             default:
-                cout << "??? ?????? ???????? ?????." << endl;
+                cout << "Был выбран неверный пункт." << endl;
         }
         cout << endl;
     }
